@@ -7,7 +7,7 @@ module.exports = function noMoreDelayedBuffs(mod) {
 	mod.game.initialize("me");
 	
 	mod.hook("S_ABNORMALITY_REFRESH", 2, { "order": 99999999, "filter": { "fake": null } }, (event) => {
-		if (event.target !== mod.game.me.gameId || event.stacks <= 1) return;
+		if (event.target !== mod.game.me.gameId || event.stacks < 2) return;
 
 		mod.send("S_ABNORMALITY_END", 1, {
 			"target": mod.game.me.gameId,
