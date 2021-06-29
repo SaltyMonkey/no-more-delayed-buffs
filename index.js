@@ -13,7 +13,7 @@ module.exports = function noMoreDelayedBuffs(mod) {
 			"target": mod.game.me.gameId,
 			"id": event.id
 		});
-		mod.send("S_ABNORMALITY_BEGIN", 4, {
+		mod.send("S_ABNORMALITY_BEGIN", mod.majorPatchVersion <= 106 ? 4 : 5, {
 			"target": mod.game.me.gameId,
 			"source": mod.game.me.gameId,
 			"id": event.id,
